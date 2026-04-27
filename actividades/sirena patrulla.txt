@@ -1,0 +1,47 @@
+int rojo1 = 13;
+int rojo2 = 12;
+int blanco = 11;
+int azul1 = 10;
+int azul2 = 9;
+
+void setup() {
+  pinMode(rojo1, OUTPUT);
+  pinMode(rojo2, OUTPUT);
+  pinMode(blanco, OUTPUT);
+  pinMode(azul1, OUTPUT);
+  pinMode(azul2, OUTPUT);
+}
+
+void loop() {
+
+  // ROJOS parpadean
+  for (int i = 0; i < 3; i++) {
+    digitalWrite(rojo1, HIGH);
+    digitalWrite(rojo2, HIGH);
+    digitalWrite(azul1, LOW);
+    digitalWrite(azul2, LOW);
+    delay(150);
+
+    digitalWrite(rojo1, LOW);
+    digitalWrite(rojo2, LOW);
+    delay(150);
+  }
+
+  // AZULES parpadean
+  for (int i = 0; i < 3; i++) {
+    digitalWrite(azul1, HIGH);
+    digitalWrite(azul2, HIGH);
+    digitalWrite(rojo1, LOW);
+    digitalWrite(rojo2, LOW);
+    delay(150);
+
+    digitalWrite(azul1, LOW);
+    digitalWrite(azul2, LOW);
+    delay(150);
+  }
+
+  // FLASH blanco
+  digitalWrite(blanco, HIGH);
+  delay(80);
+  digitalWrite(blanco, LOW);
+}
